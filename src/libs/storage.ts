@@ -16,7 +16,7 @@ export interface PlantProps{
         dateTimeNotification: Date;
 }
 
-interface StoragePlantsProps {
+export interface StoragePlantsProps {
     [id: string]: {
         data: PlantProps;
     }
