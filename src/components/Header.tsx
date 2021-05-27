@@ -9,7 +9,7 @@ import{
 }from 'react-native'
 import {getStatusBarHeight} from 'react-native-iphone-x-helper'
 import colors from '../styles/colors'
-import UserImg from '../assets/vinicius.png'
+import UserImg from '../assets/profile.png'
 import fonts from '../styles/fonts'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
