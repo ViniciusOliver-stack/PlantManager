@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 import {SvgFromUri} from 'react-native-svg'
 import {RectButton, RectButtonProps} from 'react-native-gesture-handler'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 
@@ -19,28 +20,32 @@ interface PlantProps extends RectButtonProps{
 
 export const PlantCardSecundary= ({ data, ...rest} : PlantProps) =>{
     return(
-        <RectButton
-            style={styles.container}
-            {...rest}
+        <Swipeable
+            overshootRight={false}
         >
-            <SvgFromUri 
-                uri={data.photo} 
-                width={50} 
-                height={50}
-            />
-            <Text style={styles.title}>
-                    {data.name}
+        <RectButton
+                style={styles.container}
+                {...rest}
+            >
+                <SvgFromUri 
+                    uri={data.photo} 
+                    width={50} 
+                    height={50}
+                />
+                <Text style={styles.title}>
+                        {data.name}
+                    </Text>
+                <View style={styles.details}>
+                    <Text style={styles.timeLabel}>
+                        Regar às  
+                    </Text>
+                <Text style={styles.time}>
+                    {data.hour}
                 </Text>
-            <View style={styles.details}>
-                <Text style={styles.timeLabel}>
-                    Regar às  
-                </Text>
-            <Text style={styles.time}>
-                {data.hour}
-            </Text>
-                
-            </View>
-        </RectButton>
+                    
+                </View>
+            </RectButton>
+        </Swipeable>
     )
 }
 
